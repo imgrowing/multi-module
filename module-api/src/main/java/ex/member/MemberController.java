@@ -12,7 +12,7 @@ public class MemberController {
     @Autowired
     private MemberComponent memberComponent;
 
-    @GetMapping("/")
+    @GetMapping("/member")
     public Member get(@RequestParam(name = "name") String name) {
 
         Member newMember = new Member(name, name + "@gmail.com");

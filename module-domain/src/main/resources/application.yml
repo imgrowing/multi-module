@@ -4,6 +4,11 @@ spring:
     username: user1
     password: user1
     driver-class-name: com.mysql.jdbc.Driver
+  db2-datasource:
+    url: jdbc:mysql://localhost:3306/db2
+    username: user2
+    password: user2
+    driver-class-name: com.mysql.jdbc.Driver
   jpa:
     hibernate:
       naming:

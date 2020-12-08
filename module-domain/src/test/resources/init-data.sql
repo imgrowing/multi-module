@@ -32,3 +32,15 @@ CREATE TABLE member
     nickname    VARCHAR(30),
     PRIMARY KEY (id)
 ) ENGINE = InnoDB;
+
+
+USE db2;
+
+DROP TABLE IF EXISTS product;
+CREATE TABLE product
+(
+    id          BIGINT NOT NULL AUTO_INCREMENT,
+    name        VARCHAR(30),
+    price       INTEGER,
+    PRIMARY KEY (id)
+) ENGINE = InnoDB;
