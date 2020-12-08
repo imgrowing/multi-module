@@ -18,8 +18,7 @@ import java.util.HashMap;
 
 // NOTE domain module에서 persistence 설정을 가지지 않고, 하위 모듈인 api, batch에서 설정을 가져 가면 정상적으로 동작하는지 테스트
 // NOTE 하위 모듈에서 상위 모듈의 repository, service를 참조하여 persistence 설정이 정상적으로 수행되며, 동작도 정상적으로 됨
-@Deprecated
-//@Configuration
+@Configuration
 @EnableJpaRepositories(
         basePackageClasses = DB2.class,
         entityManagerFactoryRef = "db2EntityManagerFactory",
