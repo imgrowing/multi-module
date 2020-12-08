@@ -1,5 +1,7 @@
 package ex.sample;
 
+import ex.db2.product.domain.Product;
+import ex.db2.product.service.ProductService;
 import ex.support.TimestampJobParameter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +26,8 @@ public class SampleTaskletJobConfig {
 
     private final StepBuilderFactory stepBuilderFactory;
 
+    private final ProductService productService;
+
     protected static final String JOB_NAME = "sampleTaskletJob";
 
     @Bean
@@ -40,6 +44,9 @@ public class SampleTaskletJobConfig {
                 .tasklet((contribution, chunkContext) -> {
 
                     log.warn("HELLO SPRING BATCH !!!");
+
+                    Product product = productService.getById(1L);
+                    log.warn("Product: {}", product);
 
                     return RepeatStatus.FINISHED;
                 })
