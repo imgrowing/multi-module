@@ -1,0 +1,44 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.22.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+subprojects {
+    group 'ex'
+    version '1.0'
+
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+
+    sourceCompatibility = '1.8'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok'
+
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+    }
+
+}
+
+project(':module-api') {
+    dependencies {
+        compile project(':module-domain') // 하위 모듈 build.gradle 파일의 dependencies 에 넣어도 됨
+    }
+}
+
+project(':module-batch') {
+    dependencies {
+        compile project(':module-domain')
+    }
+}

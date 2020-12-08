@@ -1,0 +1,2 @@
+# job.name 환경변수(파라미터)를 실행할 job으로 설정한다. 없으면 job이 실행되지 않음(NONE으로 지정)
+spring.batch.job.names: ${job.name:NONE}
