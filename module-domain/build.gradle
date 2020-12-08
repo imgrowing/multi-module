@@ -10,8 +10,8 @@ dependencies {
     compile group: 'com.google.guava', name: 'guava', version: '30.0-jre'
     compile group: 'joda-time', name: 'joda-time', version: '2.10.1'
 
-    runtime 'com.h2database:h2'
-    //runtime 'mysql:mysql-connector-java'
+    //runtime 'com.h2database:h2'
+    runtime 'mysql:mysql-connector-java'
 
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 }

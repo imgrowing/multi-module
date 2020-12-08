@@ -1,17 +1,17 @@
-package ex.member.repository;
+package ex.db1.member.repository;
 
-import ex.member.domain.Member;
+import ex.db1.member.domain.Member;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 @RunWith(SpringRunner.class)
-@DataJpaTest
+@SpringBootTest
 public class MemberRepositoryTest {
 
     @Autowired
@@ -19,8 +19,9 @@ public class MemberRepositoryTest {
 
     @Test
     public void add() {
-        memberRepository.save(new Member("gildong", "gildong@gmail.com"));
-        Member saved = memberRepository.findOne(1L);
-        assertThat(saved.getName(), is("gildong"));
+        Member gildong = new Member("gildong", "gildong@gmail.com");
+        Member member = memberRepository.save(gildong);
+        Member saved = memberRepository.findOne(member.getId());
+        assertThat(saved.getName(), is(gildong.getName()));
     }
 }

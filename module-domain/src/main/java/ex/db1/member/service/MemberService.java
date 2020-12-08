@@ -1,7 +1,7 @@
-package ex.member.service;
+package ex.db1.member.service;
 
-import ex.member.domain.Member;
-import ex.member.repository.MemberRepository;
+import ex.db1.member.domain.Member;
+import ex.db1.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,5 +13,9 @@ public class MemberService {
 
     public Long signup(Member member) {
         return memberRepository.save(member).getId();
+    }
+
+    public Member getById(Long id) {
+        return memberRepository.findOne(id);
     }
 }
