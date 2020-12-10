@@ -42,5 +42,6 @@ CREATE TABLE product
     id          BIGINT NOT NULL AUTO_INCREMENT,
     name        VARCHAR(30),
     price       INTEGER,
+    updatedAt   DATETIME(6),
     PRIMARY KEY (id)
 ) ENGINE = InnoDB;

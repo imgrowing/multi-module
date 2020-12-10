@@ -19,4 +19,9 @@ public class ProductController {
         Long newId = productService.register(newProduct);
         return productService.getById(newId);
     }
+
+    @GetMapping("/product/update")
+    public Product update(@RequestParam(name = "id") Long id) {
+        return productService.increasePrice(id);
+    }
 }

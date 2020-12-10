@@ -13,11 +13,14 @@ spring:
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-    show-sql: true
-    #properties.hibernate.format_sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        show-sql: true
 
 
-#logging.level.org.hibernate.SQL: debug
+
+logging.level.org.hibernate.SQL: debug
 logging.level.org.hibernate.type.descriptor.sql: trace
 #logging.level.org.hibernate.type.descriptor.sql.BasicExtractor: trace
 #logging.level.org.hibernate.type.descriptor.sql.BasicBinder: trace
@@ -26,6 +29,6 @@ logging.level.org.hibernate.type.descriptor.sql: trace
 logging.level.org.springframework.orm.jpa: DEBUG
 logging.level.org.springframework.orm.jpa.JpaTransactionManager: INFO
 logging.level.org.springframework.orm.jpa.SharedEntityManagerCreator: INFO
-logging.level.org.springframework.transaction: DEBUG
+logging.level.org.springframework.transaction: TRTACE
 logging.level.org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource: INFO
 logging.level.org.hibernate.engine.transaction.internal.TransactionImpl: DEBUG

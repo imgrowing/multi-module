@@ -20,4 +20,10 @@ public class ProductService {
     public Product getById(Long id) {
         return productRepository.findOne(id);
     }
+
+    public Product increasePrice(Long id) {
+        Product product = productRepository.findOne(id);
+        product.setPrice(product.getPrice() + 1);
+        return product;
+    }
 }
